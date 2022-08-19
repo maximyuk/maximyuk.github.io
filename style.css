@@ -6,7 +6,7 @@
 
 body {
   position: relative;
-  background: #007acc;
+  background: #6610f2;
   overflow-x:hidden;  /*для горизонтального*/
   }
 
@@ -29,7 +29,7 @@ section h1 {
 
 a {
   text-decoration: none;
-  color: rgba(34, 34, 34, 0.8);
+  color: black
 }
 a:hover, a :focus {
   color: black;
@@ -80,7 +80,7 @@ header {
   left: 0;
   width: 100%;
   padding: .5rem 0;
-  background: white;
+  background: #C4DFE6;
   z-index: 3;
 }
 header nav .logo {
@@ -224,7 +224,7 @@ footer{
     width: 100%;/*на всю ширину*/
     display: flex;
     flex-direction: column;
-    margin-top: -150px;/*отступ сверху*/
+    margin-top: -85px;/*отступ сверху*/
     z-index: 1;
 
 }
@@ -242,7 +242,7 @@ footer{
 .social li,
 .menu li{
     list-style: none;/*удалить черные маркеры*/
-        z-index: 1;
+    z-index: 1;
 }
 .social li a {
     font-size: 1.5em;/*размер иконок*/
@@ -250,7 +250,7 @@ footer{
     margin: 0 5px;
     display: inline-block;/*отображать как строчно-блочный элемент*/
     transition: 0.5s;/*плавный переход*/
-        z-index: 1;
+    z-index: 1;
 }
 .menu li a {
     font-size: 1.2em;/*размер ссылок меню*/
@@ -297,9 +297,11 @@ footer p {
 }
 
 .mod{
+  position: relative;
   margin-top: 220px;
-
+  margin-left: 2%;
 }
+
 
 
 
@@ -317,10 +319,10 @@ footer p {
 
 .image img {
     position: relative;
-    width: 1375px;
+    width: 1380px;
     right: 49px;
-    height: 650px;
-    margin-top: 15px;
+    height: 661px;
+    margin-top: 13px;
     z-index: -1;
 }
 
@@ -349,10 +351,10 @@ footer p {
 
 
 
-    .trex {
-        margin-top: -270px;
-        z-index: -1;
-      }
+.trex {
+    margin-top: -200px;
+    z-index: -2;
+  }
 
 
 
@@ -406,7 +408,7 @@ footer p {
     transition: 0.3s ease-in-out;
 }
 .Button:hover {
-    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 20px 30px 40px rgba(0, 0, 0, 0.2);
 }
 .ByttonDecor {
     position: absolute;
@@ -431,6 +433,7 @@ footer p {
     left: 35%;
     background-color: #0099ff;
 }
+
 .ButtonWrap:hover .ByttonDecor {
     display: block;
 }
