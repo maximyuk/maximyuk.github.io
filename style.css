@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400&display=swap');
+
+
+
+body {
+  position: relative;
+  background: #007acc;
+  overflow-x:hidden;  /*для горизонтального*/
+  }
+
+section {
+  height: 100vh;
+}
+section#about {
+  text-align: center;
+
+}
+section h1 {
+  text-align: center;
+}
+
+.container {
+  padding: 0px 15px 0px 15px;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: rgba(34, 34, 34, 0.8);
+}
+a:hover, a :focus {
+  color: black;
+}
+
+.menu-left a {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0px;
+  transition: color .35s ease;
+}
+.menu-left a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0s ease, background .35s ease;
+}
+.menu-left a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: width .35s ease;
+}
+.menu-left a:hover:before {
+  width: 100%;
+  background: #000;
+  transition: width .35s ease;
+}
+.menu-left a:hover:after {
+  width: 100%;
+  background: transparent;
+  transition: all 0s ease;
+}
+
+header {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .5rem 0;
+  background: white;
+  z-index: 3;
+}
+header nav .logo {
+  float: left;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  font-weight: 500;
+  color: black;
+}
+
+header nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  header nav ul li {
+    float: left;
+    margin-left: 1rem;
+  }
+}
+header nav ul li a {
+  display: block;
+}
+@media (min-width: 576px) {
+  header nav ul li a {
+    display: block;
+    padding: .425rem 0rem;
+  }
+}
+
+@media (max-width: 768px) {
+  ul {
+    clear: both;
+  }
+  ul li {
+    padding: .5em 0;
+  }
+}
+.hide-nav {
+  transform: translateY(-120% !important);
+  -webkit-transform: translateY(-120%) !important;
+}
+
+ul.menu-left {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  ul.menu-left {
+    display: block !important;
+    float: right;
+    max-height: none;
+  }
+}
+ul.menu-left:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+ul.menu-left.collapse {
+  max-height: 15em !important;
+}
+
+.nav-toggle {
+  display: block;
+  border-radius: 5px;
+  background-color: transparent;
+  float: right;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  padding: 8px 8px;
+}
+.nav-toggle.open span:first-child {
+  transform: rotate(45deg) translate(4.4px, 4.4px);
+}
+.nav-toggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.nav-toggle.open span:last-child {
+  transform: rotate(-45deg) translate(4.4px, -4.4px);
+}
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+.nav-toggle span {
+  position: relative;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 4px;
+  background-color: #000;
+  transition: all .25s;
+}
+
+.signature {
+  position: fixed;
+  font-weight: 100;
+  bottom: 10px;
+  color: #000;
+  left: 0;
+  letter-spacing: 4px;
+  font-size: 10px;
+  width: 100vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+*{
+    margin: 0;/*обнуление отступов*/
+    padding: 0;/*обнуление полей*/
+    box-sizing: border-box;/*метод расчета размеров бокса*/
+    font-family: 'Poppins', sans-serif;/*название шрифта*/
+}
+body {
+    display: flex;/*флексбокс сетка*/
+    flex-direction: column;/*направление главной оси*/
+    justify-content: flex-end;/*элементы в конце контейнера*/
+    min-height: 1vh;
+    z-index: 1;
+}
+footer{
+    position: relative;/*относительное позиционирование*/
+    width: 100%;/*на всю ширину*/
+    display: flex;
+    flex-direction: column;
+    margin-top: -150px;/*отступ сверху*/
+    z-index: 1;
+
+}
+
+.social,
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin: 3px 0;
+    flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+.social li,
+.menu li{
+    list-style: none;/*удалить черные маркеры*/
+        z-index: 1;
+}
+.social li a {
+    font-size: 1.5em;/*размер иконок*/
+    color: black;/*цвет иконок*/
+    margin: 0 5px;
+    display: inline-block;/*отображать как строчно-блочный элемент*/
+    transition: 0.5s;/*плавный переход*/
+        z-index: 1;
+}
+.menu li a {
+    font-size: 1.2em;/*размер ссылок меню*/
+    color: black;/*цвет ссылок меню*/
+    opacity: 0.75;/*значение прозрачности*/
+    margin: 0 15px;
+    text-decoration: none;/*ссылка без подчеркивания*/
+    display: inline-block;
+        z-index: 1;
+}
+.menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+    z-index: 1;
+}    
+
+
+
+
+.glav h2 {
+    font-family: Montserrat;
+    font-size: 45px;
+    color: white;
+    margin-top: 155px;
+    z-index: 2;
+}
+.glav h3 {
+    font-family: Montserrat;
+    font-size: 25px;
+    color: white;
+    margin-top: 10px;
+    z-index: 2;
+}
+
+
+
+.logo{
+  font-family: monospace;
+}
+
+.mod{
+  margin-top: 220px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Начальное ознакомления с ботом, надпись на белом фоне (волне)*/
+
+
+
+.image img {
+    position: relative;
+    width: 1375px;
+    right: 49px;
+    height: 650px;
+    margin-top: 15px;
+    z-index: -1;
+}
+
+.image {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.image h2 {
+    position: absolute;
+    margin-top: -75vh;
+    margin-left: 100px;
+    z-index: -1;
+}
+
+.image p {
+    position: absolute;
+    margin-top: -70vh;
+    margin-left: 100px;
+    z-index: -1;
+    margin-right: 120vh;
+}
+
+
+
+    .trex {
+        margin-top: -270px;
+        z-index: -1;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Кнопка для добавления бота на сервер*/
+.ButtonCont {
+    margin-top: 23px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.ButtonWrap {
+  position: relative;
+}
+.Button {
+    position: relative;
+    z-index: 1;
+    padding: 15px 38px;
+    background-color: #0099ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.Button:hover {
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+.ByttonDecor {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #0099ff;
+    border-radius: 10px;
+    transition: 10s ease-in-out;
+}
+.dec-1 {
+    top: 0;
+    left: 0;
+    background-color: #0099ff;
+}
+.dec-2 {
+    top: 0;
+    right: 0;
+    background-color: #0099ff;
+}
+.dec-3 {
+    bottom: 0;
+    left: 35%;
+    background-color: #0099ff;
+}
+.ButtonWrap:hover .ByttonDecor {
+    display: block;
+}
+.ButtonWrap:hover .dec-1 {
+    transform: translate(-15px, -10px);
+}
+.ButtonWrap:hover .dec-2 {
+    transform: translate(15px, -3px);
+}
+.ButtonWrap:hover .dec-3 {
+    transform: translate(10px, 17px);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
